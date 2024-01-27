@@ -1,0 +1,39 @@
+spring:
+    application:
+        name: crm-contact-service
+    datasource:
+        password: prem
+        url: jdbc:postgresql://localhost:5432/nextgendynamics
+        username: prem
+    jpa:
+        database: POSTGRESQL
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+    security:
+        user:
+            name: prem
+            password: prem
+application:
+    security:
+        jwt:
+            expiration: 604800000
+            oldexpiration: 86400000
+            refresh-token:
+                expiration: 604800000
+            secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+logging:
+    level:
+        org:
+            springframework:
+                cache: TRACE
+        root: info
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'

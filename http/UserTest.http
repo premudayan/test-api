@@ -1,0 +1,74 @@
+### Register User
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "firstname": "Prem",
+  "lastname": "Udayan",
+  "email":  "prem@mail.com",
+  "password": "password",
+  "role":  "ADMIN"
+}
+
+> {%
+    client.global.set("auth-token", response.body.access_token);
+    client.global.set("refresh-token", response.body.refresh_token);
+%}
+
+### Register User
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "firstname": "Just",
+  "lastname": "User",
+  "email":  "user@mail.com",
+  "password": "password",
+  "role":  "USER"
+}
+
+> {%
+    client.global.set("auth-token", response.body.access_token);
+    client.global.set("refresh-token", response.body.refresh_token);
+%}
+
+### Query the Demo endpoint
+GET http://localhost:8080/api/v1/demo-controller
+Content-Type: application/json
+Authorization: Bearer {{auth-token}}
+
+### Change the password
+PATCH http://localhost:8080/api/v1/users
+Content-Type: application/json
+Authorization: Bearer {{auth-token}}
+
+{
+  "currentPassword": "password",
+  "newPassword": "newPassword",
+  "confirmationPassword":  "newPassword"
+}
+
+### Authenticate/Login again using email and password
+POST http://localhost:8080/api/v1/auth/authenticate
+Content-Type: application/json
+
+{
+  "email":  "prem@mail.com",
+  "password": "newPassword"
+}
+
+> {% client.global.set("auth-token", response.body.access_token);
+    client.global.set("refresh-token", response.body.refresh_token); %}
+
+### Generate new token using refresh the token
+POST http://localhost:8080/api/v1/auth/refresh-token
+Authorization: Bearer {{refresh-token}}
+Content-Type: application/json
+
+> {% client.global.set("auth-token", response.body.access_token);
+    client.global.set("refresh-token", response.body.refresh_token); %}
+
+### Query the Demo endpoint after refresh token
+GET http://localhost:8080/api/v1/demo-controller
+Content-Type: application/json
+Authorization: Bearer {{auth-token}}

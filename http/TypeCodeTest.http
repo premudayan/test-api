@@ -1,0 +1,170 @@
+###Create a new Phone type
+POST http://localhost:8080/api/v1/lookuptype
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "lookupTypeName": "CONTACT_STATUS",
+  "description": "Contact Status"
+}
+
+###Create a new Phone type
+POST http://localhost:8080/api/v1/lookuptype
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "lookupTypeName": "PHONE_TYPE",
+  "description": "Phone"
+}
+
+###Create a new Email type
+POST http://localhost:8080/api/v1/lookuptype
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "lookupTypeName": "EMAIL_TYPE",
+  "description": "Email Type"
+}
+
+###Create a new Address type
+POST http://localhost:8080/api/v1/lookuptype
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "lookupTypeName": "ADDRESS_TYPE",
+  "description": "Address Type"
+}
+
+###Update  Gender
+POST http://localhost:8080/api/v1/lookuptype
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "lookupTypeName": "GENDER",
+  "description": "Gender"
+}
+
+####Update  Phone type
+#PUT http://localhost:8080/api/v1/lookuptype/1
+#Authorization: Bearer {{auth-token}}
+#Content-Type: application/json
+#
+#{
+#  "lookupTypeName": "PHONE_TYPE",
+#  "description": "Phone Type"
+#}
+
+
+
+###List all types
+GET http://localhost:8080/api/v1/lookuptype
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+###Create a customer Status
+POST http://localhost:8080/api/v1/lookupcode/addAll
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+[
+  { "lookupTypeName": "CONTACT_STATUS", "lookupCodeName": "A", "lookupValue": "Active",  "description": "Active Status", "sortOrder": 1},
+  { "lookupTypeName": "CONTACT_STATUS", "lookupCodeName": "P", "lookupValue": "Pending",  "description": "Pending Status", "sortOrder": 2},
+  { "lookupTypeName": "CONTACT_STATUS", "lookupCodeName": "C", "lookupValue": "Cancelled",  "description": "Cancelled Status", "sortOrder": 3}
+]
+
+####Create a customer Status code A
+#POST http://localhost:8080/api/v1/lookupcode
+#Authorization: Bearer {{auth-token}}
+#Content-Type: application/json
+#
+#{
+#  "lookupTypeName": "CONTACT_STATUS",
+#  "lookupCodeName": "T",
+#  "lookupValue": "Test",
+#  "description": "Test Status",
+#  "sortOrder": 1
+#}
+
+
+###Create a  Phone Type
+POST http://localhost:8080/api/v1/lookupcode/addAll
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+[
+  { "lookupTypeName": "PHONE_TYPE", "lookupCodeName": "M", "lookupValue": "Mobile",  "description": "Mobile Phone", "sortOrder": 1},
+  { "lookupTypeName": "PHONE_TYPE", "lookupCodeName": "H", "lookupValue": "Home",  "description": "Home Phone", "sortOrder": 2},
+  { "lookupTypeName": "PHONE_TYPE", "lookupCodeName": "W", "lookupValue": "Work",  "description": "Work Phone", "sortOrder": 3}
+]
+
+###Create a Email Code
+POST http://localhost:8080/api/v1/lookupcode/addAll
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+[
+  { "lookupTypeName": "EMAIL_TYPE", "lookupCodeName": "H", "lookupValue": "Home",  "description": "Home Email", "sortOrder": 1},
+  { "lookupTypeName": "EMAIL_TYPE", "lookupCodeName": "W", "lookupValue": "Work",  "description": "Work Email", "sortOrder": 2}
+]
+
+###Create a Address Code
+POST http://localhost:8080/api/v1/lookupcode/addAll
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+[
+  { "lookupTypeName": "ADDRESS_TYPE", "lookupCodeName": "H", "lookupValue": "Home",  "description": "Home Address", "sortOrder": 1},
+  { "lookupTypeName": "ADDRESS_TYPE", "lookupCodeName": "W", "lookupValue": "Work",  "description": "Work Address", "sortOrder": 2}
+]
+
+
+###Create a Gender Code
+POST http://localhost:8080/api/v1/lookupcode/addAll
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+[
+  { "lookupTypeName": "GENDER", "lookupCodeName": "M", "lookupValue": "Male",  "description": "Male", "sortOrder": 1},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "F", "lookupValue": "Female",  "description": "Female", "sortOrder": 2},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "AG", "lookupValue": "Agender",  "description": "Agender", "sortOrder": 3},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "AN", "lookupValue": "Androgynous",  "description": "Androgynous", "sortOrder": 4},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "BG", "lookupValue": "Bigender",  "description": "Bigender", "sortOrder": 5},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "CG", "lookupValue": "Cisgender",  "description": "Cisgender", "sortOrder": 6},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "GF", "lookupValue": "Genderfluid",  "description": "Genderfluid", "sortOrder": 7},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "GQ", "lookupValue": "Genderqueer",  "description": "Genderqueer", "sortOrder": 8},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "NB", "lookupValue": "Non-binary",  "description": "Non-binary", "sortOrder": 9},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "P", "lookupValue": "Polygender",  "description": "Polygender", "sortOrder": 10},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "TS", "lookupValue": "Two-Spirit",  "description": "Two-Spirit", "sortOrder": 11},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "TG", "lookupValue": "Transgender",  "description": "Transgender", "sortOrder": 12},
+  { "lookupTypeName": "GENDER", "lookupCodeName": "N", "lookupValue": "Prefer not to say",  "description": "Prefer not to say", "sortOrder": 13}
+]
+
+
+###Update Email code W
+#PUT http://localhost:8080/api/v1/lookupcode/5
+#Authorization: Bearer {{auth-token}}
+#Content-Type: application/json
+#
+#{
+#  "lookupTypeName": "EMAIL_TYPE",
+#  "lookupCodeName": "W",
+#  "lookupValue": "Work",
+#  "description": "Work Email",
+#  "sortOrder": 2
+#}
+
+####List All code
+#GET http://localhost:8080/api/v1/lookupcode
+#Authorization: Bearer {{auth-token}}
+#Content-Type: application/json
+#
+####List All code
+#GET http://localhost:8080/api/v1/lookupcode/findByType?lookupTypeName=EMAIL_TYPE&lookupCodeName=H
+#Authorization: Bearer {{auth-token}}
+#Content-Type: application/json
+
+

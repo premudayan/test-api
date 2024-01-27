@@ -1,0 +1,8 @@
+GET http://localhost:8080/v1/hello
+#####
+GET http://localhost:8080/v1/hello
+Accept-Language: fr
+#####
+GET http://localhost:8080/v1/hello
+Accept-Language: es
+#####

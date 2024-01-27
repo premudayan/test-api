@@ -1,0 +1,71 @@
+###Create home email for contact 1
+POST http://localhost:8080/api/v1/contactemails?contactId=1
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "emailAddress": "prem_udayan@yahoo.com",
+  "emailType": "H"
+}
+
+###Create work email for contact 1
+PUT http://localhost:8080/api/v1/contactemails?contactId=1&upsert=true
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "emailAddress": "uprem9@nea.org",
+  "emailType": "W",
+  "isPrimary": true
+}
+
+###Create work email for contact 1
+PUT http://localhost:8080/api/v1/contactemails?contactId=1&upsert=true
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "emailAddress": "prem@yahoo.org",
+  "emailType": "H",
+  "isPrimary": true
+}
+
+
+###Create home email for contact 2
+POST http://localhost:8080/api/v1/contactemails?contactId=2
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "emailAddress": "prnanav@gmail.org",
+  "emailType": "H"
+}
+
+###Update Email for a contact based on type
+PUT http://localhost:8080/api/v1/contactemails?contactId=1
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "emailAddress": "premu@yahoo.com",
+  "emailType": "H",
+  "isPrimary": true
+}
+###Update Email for a contact and for specific email record
+PUT http://localhost:8080/api/v1/contactemails?contactId=1&id=8
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "emailAddress": "prem_udayan@yahoo.com"
+}
+
+###Delete an specific email record
+DELETE http://localhost:8080/api/v1/contactemails/deleteById?id=18
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+###Delete a specific email type of a contact
+DELETE http://localhost:8080/api/v1/contactemails/deleteByType?contactId=1&emailType=H
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json

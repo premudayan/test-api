@@ -1,0 +1,79 @@
+###Create a new contact
+POST http://localhost:8080/api/v1/contacts
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "firstName":"Prem",
+  "middleName":"P",
+  "lastName":"Udayan",
+  "dateOfBirth":"2000-01-01"
+}
+
+###Create a new contact
+POST http://localhost:8080/api/v1/contacts
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "firstName":"Pranav",
+  "lastName":"Prem",
+  "dateOfBirth":"1990-01-01"
+}
+
+###Create a new contact
+POST http://localhost:8080/v1/contacts
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+"firstName": "Preethi",
+"lastName": "Prem",
+"dateOfBirth": "2000-03-01"
+}
+
+###Create a new contact
+POST http://localhost:8080/v1/contacts
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "firstName": "Prathija",
+  "lastName": "Prem"
+}
+
+###Create a new contact
+POST http://localhost:8080/v1/contacts
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+  "firstName": "Sinduja",
+  "lastName": "Prem"
+}
+
+###List All contacts
+GET http://localhost:8080/api/v1/contacts
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+###List a contacts
+GET http://localhost:8080/api/v1/contacts/2
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+###Update  contacts
+PUT http://localhost:8080/v1/contacts/update/1
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
+{
+"middleName": "Pillai",
+"dateOfBirth": "1969-01-01"
+
+}
+#####
+DELETE http://localhost:8080/v1/contacts/4
+Authorization: Bearer {{auth-token}}
+Content-Type: application/json
+
